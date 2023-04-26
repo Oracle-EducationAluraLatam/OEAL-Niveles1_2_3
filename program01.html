@@ -1,0 +1,65 @@
+<!-- TODO ESTO ES DE EJEMPLO -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!--    Actualización de página cada 4 segundos.   -->
+    <!--<meta http-equiv="refresh" content="4">-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> TestProgramSoftware </title>
+</head>
+
+<body>
+
+    <h1> <strong> ¡Esta es la página de ejemplos de clase!</strong></h1>
+    <h4> Impresión de resultados en código "HTML"</h4>
+
+</body>
+
+<!--    Código javasScript  -->
+<script>
+
+    //  #   #   #   #
+    espaciador = "<br>/ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - / <br><br>";
+    //  #   #   #   #
+
+    // Alternativa al ejercicio --> Juan, Pedro y Carlos...
+
+    anio = 2023;
+    datesJuan = [name = " - Juan", birth1 = 1988];
+    datesPedro = [name = " - Pedro", birth1 = 2006];
+    datesCarlos = [name = " - Carlos", birth1 = 2001];
+
+    document.write(datesJuan[0], " tiene ", (anio - datesJuan[1]), " años.<br>",
+        datesPedro[0], " tiene ", (anio - datesPedro[1]), " años.<br>",
+        datesCarlos[0], " tiene ", (anio - datesCarlos[1]), " años.<br>");
+
+    var operation1 = ((anio - datesJuan[1]) + (anio - datesPedro[1]) + (anio - datesCarlos[1]));
+    var operation2 = (Math.round(operation1 / 3));
+
+    document.write("<br> La edad promedio de Juan, Pedro y Carlos es " + operation2 + " años.<br>");
+
+    //  #   #   #   #
+    document.write(espaciador);
+    //  #   #   #   #
+
+
+    //  Alternativa al ejercicio --> Jimena, Paola y Laura...
+
+    personOne = [name = " - Jimena", age = 71];
+    personTwo = [nombre01 = " - Paola", age01 = 19];
+    personTree = [nombre02 = " - Laura", age02 = 24];
+    operacionArt1 = (age + age01 + age02) / 3;
+
+    document.write(personOne[0], " tiene ", personOne[1], " años.<br>",
+        personTwo[0], " tiene ", personTwo[1], " años.<br>",
+        personTree[0], " tiene ", personTree[1], " años.<br>");
+
+    document.write("<br> La edad promedio de Jimena, Paola y Laura es de " + operacionArt1 + " años.");
+
+</script>
+
+</html>
