@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mundialFIFA</title>
+</head>
+
+<body>
+    <h1>¡Años de mundial de fútbol de la FIFA!</h1>
+</body>
+
+<script>
+
+    function saltosDeLinea() {
+        document.write("<br> <br>")
+    }
+
+    function imprimirTexto(texto) {
+        document.write(texto);
+        saltosDeLinea();
+    }
+
+    var anioMundial = 1930;
+    var limteAnio = parseInt(prompt("Ingrese el año límite: "));
+
+    imprimirTexto("<strong>El primer mundial de la FIFA fue en el año</strong> " + anioMundial);
+
+    while (anioMundial <= limteAnio) {
+        imprimirTexto("¡Hubo mundial de la FIFA en el año! " + anioMundial);
+        anioMundial = anioMundial + 4;
+    }
+
+    imprimirTexto("<br> <--  ¡Fin del programa!  -->")
+
+</script>
+
+</html>
