@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="2">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Primer dibujo </title>
+
+    <!--    Etiqueta por defecto 'canvas'    -->
+    <canvas width="600" height="400"> </canvas>
+
+</head>
+
+<body>
+
+</body>
+
+<script>
+
+    function saltarLinea() {
+        document.write("<br> <br>");
+    }
+
+    function imprimirTexto(Texto) {
+        document.write(Texto);
+    }
+
+    /*
+    let pantalla = document.querySelector("canvas");
+    let pincel = pantalla.getContext("2d");
+
+    pincel.fillStyle = "Green";
+    pincel.fillRect(0, 0, 50, 50);
+    pincel.strokeStyle = "Black";   //  Sirve para delimitar "poner bordes"
+    pincel.strokeRect(0, 0, 50, 50);   // Pinta las líneas del contorno.
+
+    pincel.fillStyle = "Green";
+    pincel.fillRect(50, 0, 50, 50);
+    pincel.strokeStyle = "Black";
+    pincel.strokeRect(50, 0, 50, 50);
+    */
+
+    //  Crear una función para dibujar cuadrados y ahorrar líneas de código.
+
+    /*  Hay que crear un parámetro en la función para que los cuadrados se puedan
+        pintar uno al lado del otro y no encima del cuadrado anterior.
+        - X = Horizontal.
+        - Y = Vertical.
+
+        Para este caso son tres parámetros que se crearon.
+    */
+    function dibujarCuadrado(x, y, color) {
+        let pantalla = document.querySelector("canvas");
+        let pincel = pantalla.getContext("2d");
+
+        pincel.fillStyle = color;
+        pincel.fillRect(x, y, 50, 50);
+        pincel.strokeStyle = "Black";
+        pincel.strokeRect(x, y, 50, 50);
+
+    }
+
+    dibujarCuadrado(0, 0, "Black");
+    dibujarCuadrado(0, 50, "White");
+    dibujarCuadrado(0, 100, "Black");
+    dibujarCuadrado(0, 150, "White");
+
+    dibujarCuadrado(50, 0, "White");
+    dibujarCuadrado(50, 50, "Black");
+    dibujarCuadrado(50, 100, "White");
+    dibujarCuadrado(50, 150, "Black");
+
+    dibujarCuadrado(100, 0, "Black");
+    dibujarCuadrado(100, 50, "White");
+    dibujarCuadrado(100, 100, "Black");
+    dibujarCuadrado(100, 150, "White");
+
+    dibujarCuadrado(150, 0, "White");
+    dibujarCuadrado(150, 50, "Black");
+    dibujarCuadrado(150, 100, "White");
+    dibujarCuadrado(150, 150, "Black");
+
+    saltarLinea();
+    imprimirTexto("¡Programa finalizado!");
+
+</script>
+
+</html>
