@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="2">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Primer dibujo </title>
+
+    <!--    Etiqueta por defecto 'canvas'    -->
+    <canvas width="800" height="600"> </canvas>
+
+</head>
+
+<body>
+
+
+
+</body>
+
+<script>
+
+    function saltarLinea() {
+        document.write("<br> <br>");
+    }
+
+    function imprimirTexto(Texto) {
+        document.write(Texto);
+    }
+
+    let pantalla = document.querySelector("canvas");
+    let pincel = pantalla.getContext("2d");
+
+    /*  'fillRect' llenar rectángulo y posee cuatro parámetros (plano cartesiano)
+        - Posición inicial (0,0).
+        - Eje horizontal (X).
+        - Eje vertical (Y).
+    */
+
+    pincel.fillStyle = "darkBlue";  //  Propiedad...
+    pincel.fillRect(0, 0, 800, 800);   //  Función...
+
+    /*  'fillStyle' Es una propiedad o una característica en el cual se le definen:
+        - El comado 'pincel.fillStyle' debe de estar encima de 'pincel.fillRect'
+            para que pueda dibujar y aplicar el color.
+        - Color.
+    */
+
+    pincel.fillStyle = "yellow";    //  Propiedad...
+    pincel.fillRect(0, 0, 800, 246);   //  Función...
+
+    pincel.fillStyle = "darkRed";   //  Propiedad...
+    pincel.fillRect(0, 430, 800, 220);  //  Función...
+
+    /*  La instrucción 'pincel.beginPath();' es para comenzar un nuevo camino;
+        sigue instrucciones como si fuese un mapa.
+
+        La instrucción 'pincel.moveTo();' para indicar a que posición debe de
+        moverse.
+
+        La instrucción 'pincel.lineTo();' para indicar a que posición debe de
+        moverse.
+    */
+
+    pincel.fillStyle = "White";    //  Propiedad...
+    pincel.beginPath();
+    pincel.moveTo(200, 300);
+    pincel.lineTo(360, 420);
+    pincel.lineTo(500, 420);
+    pincel.fill();  //  Rellenar...
+    //  Circunferencia...
+    pincel.fillStyle = "darkGreen"
+    pincel.beginPath();
+    /*   Para graficar circunferencia 'pincel.arc(300, 200, 50, 0, 2*3.14);'
+        - Posición inicial.
+        - Tamaño del circulo.
+        - Ángulo inicial.
+        - Ángulo final '# * pi'
+    */
+    pincel.arc(526, 372, 50, 0, 2 * 3.14);
+    pincel.fill();
+
+    saltarLinea();
+    imprimirTexto("Documetación importante en - " +
+        "https://developer.mozilla.org/es/docs/Web/API/Canvas_API");
+    saltarLinea();
+    imprimirTexto("¡Programa finalizado!");
+
+</script>
+
+</html>
