@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JuegoAdivinacion</title>
+</head>
+
+<body>
+    <h1>¡Adivinación!</h1>
+</body>
+
+<script>
+
+    //  Función de espaciado...
+    function saltosDeLinea() {
+        document.write("<br> <br>")
+    }
+
+    //  Función para imprimir un texto...
+    function imprimirTexto(texto) {
+        document.write(texto);
+        saltosDeLinea();
+    }
+
+    //  imprimirTexto("**********");   //  Impresión de 10 asteriscos...
+
+    for (var lineas = 1; lineas <= 4; lineas++) {
+
+        for (var columnas = 1; columnas <= 100; columnas++) {
+
+            document.write("*");
+        }
+        saltosDeLinea();
+    }
+    saltosDeLinea();
+    imprimirTexto("¡El programa ha finalizado!");
+
+</script>
+
+</html>

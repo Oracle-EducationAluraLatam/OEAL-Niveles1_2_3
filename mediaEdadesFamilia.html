@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tablas</title>
+</head>
+
+<body>
+    <h1>Calcular -- Calcular la media de las edades de una familia.</h1>
+</body>
+
+<script>
+
+    //  Función de espaciado...
+    function saltosDeLinea() {
+        document.write("<br> <br>")
+    }
+
+    //  Función para imprimir un texto...
+    function imprimirTexto(texto) {
+        document.write(texto);
+        saltosDeLinea();
+    }
+
+    //  Calcular la edad de 4 mienbros de una familia.
+    var edadPadre = 42;
+    var edadMadre = 38;
+    var edadHijo = 15;
+    var edadHija = 12;
+    //  Operación... 
+    var totalEdad = (edadPadre + edadMadre + edadHijo + edadHija);
+    var mediaEdad = (totalEdad / 4);
+
+    imprimirTexto("La media de las edades es " + Math.round(mediaEdad));
+
+    saltosDeLinea(); saltosDeLinea();
+
+    //  #   #   #   #
+
+    //  Programa para preguntar cuantos miembros hay en la familia...
+
+
+    var numeroMiembros = parseInt(prompt("Ingrese la cantidad de miembros de su familia."));
+    var contador = 1;
+    var totalEdades = 0;
+
+    if (numeroMiembros <= 10) {
+
+        while (contador <= numeroMiembros) {
+            edad = parseInt(prompt("Ingrese la edad del familiar"));
+            totalEdades = (totalEdades + edad);
+            contador++;
+        }
+
+        mediaEdades = (totalEdades / numeroMiembros);
+        imprimirTexto("La media de las dedades de la familia es " + mediaEdades);
+
+    } else {
+        imprimirTexto("¡Son demasiados miembreos de una familia!");
+    }
+
+
+    //  Números pares del 1 al 100...
+
+    /*
+    var cont = 2;
+    while (cont <= 100) {
+        imprimirTexto(cont);
+        cont = cont + 2; // incrementar de dos en dos
+    }
+    imprimirTexto("FIN");
+    */
+
+</script>
+
+</html>

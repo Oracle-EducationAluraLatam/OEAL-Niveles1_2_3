@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JuegoAdivinacion</title>
+</head>
+
+<body>
+    <h1>¡Adivinación!</h1>
+</body>
+
+<script>
+
+    //  Función de espaciado...
+    function saltosDeLinea() {
+        document.write("<br> <br>")
+    }
+
+    //  Función para imprimir un texto...
+    function imprimirTexto(texto) {
+        document.write(texto);
+        saltosDeLinea();
+    }
+
+    var numeroPensado = Math.round(Math.random() * 10);
+    var intentos = 3;
+    var contador = 1;
+
+    while (contador <= intentos) {
+
+        var numeroLanzado = parseInt(prompt("Ingrese un número entre 0 - 10"));
+
+        if (numeroPensado == numeroLanzado) {
+            //alert("¡Usted a acertado!");
+            imprimirTexto("Acertó ");
+            imprimirTexto("Número pensado " + numeroPensado);
+            imprimirTexto("Número lanzado " + numeroLanzado);
+            break;
+        } else {
+            //alert("¡Fallaste!");
+            imprimirTexto("Falló ");
+            imprimirTexto("Número pensado " + numeroPensado);
+            imprimirTexto("Número lanzado " + numeroLanzado);
+        }
+        contador++;
+    }
+
+    imprimirTexto("¡El programa ha finalizado!");
+
+</script>
+
+</html>
