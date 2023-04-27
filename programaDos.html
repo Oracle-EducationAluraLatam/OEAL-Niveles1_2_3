@@ -9,7 +9,7 @@
     <title> Primer dibujo </title>
 
     <!--    Etiqueta por defecto 'canvas'    -->
-    <canvas width="600" height="400"> </canvas>
+    <canvas width="600" height="600"> </canvas>
 
 </head>
 
@@ -61,26 +61,61 @@
         pincel.strokeRect(x, y, 50, 50);
 
     }
+    /*
+        dibujarCuadrado(0, 0, "Black");
+        dibujarCuadrado(0, 50, "White");
+        dibujarCuadrado(0, 100, "Black");
+        dibujarCuadrado(0, 150, "White");
+    
+        dibujarCuadrado(50, 0, "White");
+        dibujarCuadrado(50, 50, "Black");
+        dibujarCuadrado(50, 100, "White");
+        dibujarCuadrado(50, 150, "Black");
+    
+        dibujarCuadrado(100, 0, "Black");
+        dibujarCuadrado(100, 50, "White");
+        dibujarCuadrado(100, 100, "Black");
+        dibujarCuadrado(100, 150, "White");
+    
+        dibujarCuadrado(150, 0, "White");
+        dibujarCuadrado(150, 50, "Black");
+        dibujarCuadrado(150, 100, "White");
+        dibujarCuadrado(150, 150, "Black");
+    */
 
-    dibujarCuadrado(0, 0, "Black");
-    dibujarCuadrado(0, 50, "White");
-    dibujarCuadrado(0, 100, "Black");
-    dibujarCuadrado(0, 150, "White");
+    /*  Se van a usar iteraciones para ahorra código y que el programa sea más
+        óptimo en su funcionamiento.    */
 
-    dibujarCuadrado(50, 0, "White");
-    dibujarCuadrado(50, 50, "Black");
-    dibujarCuadrado(50, 100, "White");
-    dibujarCuadrado(50, 150, "Black");
+    /*    
+    let x = 0;
 
-    dibujarCuadrado(100, 0, "Black");
-    dibujarCuadrado(100, 50, "White");
-    dibujarCuadrado(100, 100, "Black");
-    dibujarCuadrado(100, 150, "White");
+    while (x < 600) {
+        dibujarCuadrado(x, 0, "Yellow");
+        dibujarCuadrado(x, 50, "Yellow");
+        dibujarCuadrado(x, 100, "Yellow");
+        dibujarCuadrado(x, 150, "Yellow");
+        dibujarCuadrado(x, 200, "darkBlue");
+        dibujarCuadrado(x, 250, "darkBlue");
+        dibujarCuadrado(x, 300, "darkBlue");
+        dibujarCuadrado(x, 350, "darkRed");
+        dibujarCuadrado(x, 400, "darkRed");
+        x = x + 50;
+    }
+    */
 
-    dibujarCuadrado(150, 0, "White");
-    dibujarCuadrado(150, 50, "Black");
-    dibujarCuadrado(150, 100, "White");
-    dibujarCuadrado(150, 150, "Black");
+    for (var x = 0; x < 600; x = x + 50) {
+
+        dibujarCuadrado(x, 0, "Yellow");
+        dibujarCuadrado(x, 50, "Yellow");
+        dibujarCuadrado(x, 100, "Yellow");
+        dibujarCuadrado(x, 150, "Yellow");
+        dibujarCuadrado(x, 200, "darkBlue");
+        dibujarCuadrado(x, 250, "darkBlue");
+        dibujarCuadrado(x, 300, "darkBlue");
+        dibujarCuadrado(x, 350, "darkRed");
+        dibujarCuadrado(x, 400, "darkRed");
+
+    }
 
     saltarLinea();
     imprimirTexto("¡Programa finalizado!");
