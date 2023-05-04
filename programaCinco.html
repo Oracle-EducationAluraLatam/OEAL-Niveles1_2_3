@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="40">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Primer dibujo </title>
+
+    <!--    Etiqueta por defecto 'canvas'    -->
+    <canvas width="600" height="400"> </canvas>
+
+</head>
+
+<body>
+
+</body>
+
+<script>
+
+    function saltarLinea() {
+        document.write("<br> <br>");
+    }
+
+    function imprimirTexto(Texto) {
+        document.write(Texto);
+    }
+
+    let pantalla = document.querySelector("canvas");
+    let pincel = pantalla.getContext("2d");
+
+    pincel.fillStyle = "lightGray";
+    pincel.fillRect(0, 0, 600, 400);
+
+    function disenarCircunferencia(x, y, radio, color) {
+        pincel.fillStyle = color;
+        pincel.beginPath();
+        pincel.arc(x, y, radio, 0, 2 * Math.PI);
+        pincel.fill();
+    }
+
+    function limpiarPantalla() {
+        pincel.clearRect(0, 0, 600, 400);
+    }
+
+    var radio = 10;
+
+    function disenarObjetivo(x, y) {
+        disenarCircunferencia(x, y, radio + 20, "Red");
+        disenarCircunferencia(x, y, radio + 10, "White");
+        disenarCircunferencia(x, y, radio, "Red");
+    }
+
+    //  Movimiento del dibujo por el canvas.
+
+    function sortearPosicion(maximo) {
+        /* 'floor' para redondear número entero  solo hacia abajo.
+        */
+        return Math.floor(Math.random() * maximo);
+    }
+
+    let x = 0;
+    var xAleatorio;
+    var yAleatorio;
+
+    function actualizarPantalla() {
+        limpiarPantalla();
+        xAleatorio = sortearPosicion(600);
+        yAleatorio = sortearPosicion(400);
+        disenarObjetivo(xAleatorio, yAleatorio);
+        x++;
+    }
+
+    setInterval(actualizarPantalla, 1200);
+
+    function disparo(evento) {
+        var x = evento.pageX - pantalla.offsetLeft;
+        var y = evento.pageY - pantalla.offsetTop;
+
+        if ((x < xAleatorio + radio) &&
+            (x > xAleatorio - radio) &&
+            (y < yAleatorio + radio) &&
+            (y > yAleatorio - radio)) {
+
+            alert("¡Tiro certero!");
+
+        }
+
+    }
+
+    pantalla.onclick = disparo;
+
+    //  #   #   #   #
+
+    saltarLinea();
+    imprimirTexto("¡Programa finalizado!");
+
+    /*
+        A) Math.round retorna el valor de un número redondeado
+             al entero más cercano.
+        B) Math.floor la usamos cuando queremos redondear un número
+             al máximo entero menor.
+    */
+
+</script>
+
+</html>

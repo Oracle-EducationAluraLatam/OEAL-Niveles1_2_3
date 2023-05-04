@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="40">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Primer dibujo </title>
+
+    <!--    Etiqueta por defecto 'canvas'    -->
+    <canvas width="600" height="400"> </canvas>
+
+</head>
+
+<body>
+
+</body>
+
+<script>
+
+    function saltarLinea() {
+        document.write("<br> <br>");
+    }
+
+    function imprimirTexto(Texto) {
+        document.write(Texto);
+    }
+
+    let pantalla = document.querySelector("canvas");
+    let pincel = pantalla.getContext("2d");
+
+    pincel.fillStyle = "lightGray";
+    pincel.fillRect(0, 0, 600, 400);
+
+    function disenarCircunferencia(x, y, radio) {
+        pincel.fillStyle = "Blue";
+        pincel.beginPath();
+        pincel.arc(x, y, radio, 0, 2 * Math.PI);
+        pincel.fill();
+    }
+
+    function limpiarPantalla() {
+        pincel.clearRect(0, 0, 600, 400);
+    }
+
+    let x = 0;
+
+    function actualizarPantalla() {
+        limpiarPantalla();
+        disenarCircunferencia(x, 20, 10);
+        x++;
+    }
+
+    setInterval(actualizarPantalla, 100);
+
+    saltarLinea();
+    imprimirTexto("¡Programa finalizado!");
+
+</script>
+
+</html>

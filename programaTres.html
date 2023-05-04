@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="2">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Primer dibujo </title>
+
+    <!--    Etiqueta por defecto 'canvas'    -->
+    <canvas width="600" height="400"> </canvas>
+
+</head>
+
+<body>
+
+</body>
+
+<script>
+
+    function saltarLinea() {
+        document.write("<br> <br>");
+    }
+
+    function imprimirTexto(Texto) {
+        document.write(Texto);
+    }
+
+    let pantalla = document.querySelector("canvas");
+    let pincel = pantalla.getContext("2d");
+
+    pincel.fillStyle = "Gray";
+    pincel.fillRect(0, 0, 600, 400);
+
+    function exibirAlerta(evento) {
+        let x = evento.pageX - pantalla.offsetLeft;
+        let y = evento.pageY - pantalla.offsetTop;
+
+        console.log(evento);
+        alert("Usted hizo un click en coordenadas X: " + x + " - Y: " + y);
+    }
+
+    function dibujarCirculo(evento) {
+        let x = evento.pageX - pantalla.offsetLeft;
+        let y = evento.pageY - pantalla.offsetTop;
+
+        pincel.fillStyle = "Blue";
+        pincel.beginPath();
+        pincel.arc(x, y, 10, 0, 2 * 3.14);
+        pincel.fill();
+
+        console.log(x + ",", +y);
+    }
+
+    //pantalla.onclick = exibirAlerta;
+    pantalla.onclick = dibujarCirculo;
+
+    saltarLinea();
+    imprimirTexto("¡Programa finalizado!");
+
+</script>
+
+</html>
